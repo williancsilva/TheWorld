@@ -1,15 +1,32 @@
 ﻿//site.js
 (function () {
-    var ele = document.getElementById("username");
-    ele.innerHTML = "Zoro";
+    //var ele = $("#username");
+    //ele.text("Zoro");
 
-    var main = document.getElementById("main");
+    //var main = $("#main");
 
-    main.onmouseenter = function () {
-        main.style.backgroundColor = "#888";
-    };
+    //main.on("mouseenter", function () {
+    //    main.style = "background-color: #888;";
+    //});
 
-    main.onmouseleave = function () {
-        main.style.backgroundColor = "";
-    };
+    //main.on("mouseleave", function () {
+    //    main.style = "";
+    //});
+
+    //var menuItems = $("ul.menu li a");
+    //menuItems.on("click", function () {
+    //    var me = $(this);
+    //    alert(me.text());
+    //});
+
+    var $sidebarAndWrapper = $("#sidebar, #wrapper");
+
+    $("#sidebarToggle").on("click", function () {
+        $sidebarAndWrapper.toggleClass("hide-sidebar");
+        if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+            $(this).text("Show SideBar");
+        } else {
+            $(this).text("Hide SideBar");
+        }
+    });
 })();
